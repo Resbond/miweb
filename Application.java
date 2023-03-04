@@ -2,26 +2,26 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) throws Exception {
-        float Num1 = 0;
-        float Num2 = 0;
-        int ope = 0;
+        float numberOne = 0;
+        float numberTwo = 0;
+        int symbol = 0;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite el primer número");
-        Num1 = sc.nextFloat();
+        numberOne = sc.nextFloat();
         System.out.println("Digite el segundo número");
-        Num2 = sc.nextFloat();
+        numberTwo = sc.nextFloat();
         System.out.println("Digite el numero de la operacion a realizar");
-        ope = sc.nextInt();
+        symbol = sc.nextInt();
 
-        Calculator oper = new Calculator(Num1, Num2);
+        Calculator operation = new Calculator(numberOne, numberTwo);
         float result = 0;
 
-        switch(ope){
-            case 1: result = oper.add(); break;
-            case 2: result = oper.subs(); break;
-            case 3: result = oper.mult(); break;
-            case 4: result = oper.div(); break;
+        switch(symbol){
+            case 1: result = operation.addition(); break;
+            case 2: result = operation.substraction(); break;
+            case 3: result = operation.multiplication(); break;
+            case 4: result = operation.division(); break;
         }
         System.out.println("El resultado de la operacion es " + result);
     }

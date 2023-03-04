@@ -1,30 +1,30 @@
 public class Calculator {
-    float Num1;
-    float Num2;
+    float numberOne;
+    float numberTwo;
 
     public Calculator(){
-        Num1 = 0;
-        Num2 = 0;
+        numberOne = 0;
+        numberTwo = 0;
     }
 
-    public Calculator(float num1, float num2) {
-        Num1 = num1;
-        Num2 = num2;
+    public Calculator(float n1, float n2) {
+        numberOne = n1;
+        numberTwo = n2;
     }
 
-    public float add(){
-        return Num1 + Num2;
+    public float addition(){
+        return numberOne + numberTwo;
     }
 
-    public float subs(){
-        return Num1 - Num2;
+    public float substraction(){
+        return numberOne - numberTwo;
     }
 
-    public float mult(){
-        return Num1 * Num2;
+    public float multiplication(){
+        return numberOne * numberTwo;
     }
 
-    public float div(){
-        return Num1 / Num2;
+    public float division(){
+        return numberOne / numberTwo;
     }
 }
