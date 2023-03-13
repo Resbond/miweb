@@ -1,2 +1,6 @@
 .env
 *.class
+target
+
+# IDE folders and file
+.vscode
