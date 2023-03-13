@@ -2,13 +2,14 @@
 
 ## Pre requirements
 
-java 11.0.17
-Apache Maven 3.9.0
+- java 11.0.17
+- Apache Maven 3.9.0
 
-## usage
+## Usage
 
 Execute the following commands to run the application:
+
 ```bash
 mvn package
-java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App 
+java -jar target/my-app-1.0-SNAPSHOT.jar
 ```
