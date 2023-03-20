@@ -9,7 +9,7 @@ import org.junit.Test;
  * y cumplir con las siguientes validaciones
  *-Si la suma de ambos valores da mas de 100, debe retornar =-1
  *-Si alguno de los valores ingresados es negativo debe retornar =-1
- *
+ * la calculadora solo puede realizar divisiones exactas.
  */
 public class CalculatorTest {
     
@@ -27,6 +27,7 @@ public class CalculatorTest {
         //Asert (validación)
         assertEquals(resultExpected, result);
     }
+
     @Test
     public void addTwoHugeNumbers_Failed() throws AddOperationException{
         //Arrange
@@ -39,6 +40,7 @@ public class CalculatorTest {
         //Assert
         assertEquals(resultExpected, result);
     }
+
     @Test(expected = AddOperationException.class)
     public void addOneNegativeNumberOnePositiveNumber_Failed() throws AddOperationException{
         //Arrange
@@ -61,4 +63,56 @@ public class CalculatorTest {
         calculator.add(numberOne, numberTwo);
         //Assert
     }
+
+    //multiplicacion de numeros enteros resultados menores a 100;
+    @Test
+    public void multiplyTwoNumbers_Success() throws AddOperationException{
+        //Arrange (defición del estado de objetos a participar en la prueba)
+        int numberOne = 4;
+        int numberTwo = 7;
+        int resultExpected = 28 ;
+
+        //Actc (donde ejecuto la función que quiero probar)
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(numberOne, numberTwo);
+        
+        //Asert (validación)
+        assertEquals(resultExpected, result);
+    }
+
+    @Test
+    public void multiplyTwoBigNumbers_Failed() throws AddOperationException{
+        //Arrange (defición del estado de objetos a participar en la prueba)
+        int numberOne = 14;
+        int numberTwo = 17;
+        int resultExpected = -1 ;
+
+        //Actc (donde ejecuto la función que quiero probar)
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(numberOne, numberTwo);
+        
+        //Asert (validación)
+        assertEquals(resultExpected, result);
+    }
+    @Test
+    public void divideTwoNumbers_Success() throws AddOperationException{
+        //Arrange (defición del estado de objetos a participar en la prueba)
+        int numberOne = 6;
+        int numberTwo = 2;
+
+        //Actc (donde ejecuto la función que quiero probar)
+        Calculator calculator = new Calculator();
+        calculator.divide(numberOne, numberTwo);
+        //Assert
+    }
+    @Test
+    public void divideOneSmallNumberToOneBigNumber_Fail() throws AddOperationException{
+        int numberOne = 3;
+        int numberTwo = 7;
+        Calculator calculator = new Calculator();
+        calculator.divide(numberOne, numberTwo);
+
+
+    }
 }
+
