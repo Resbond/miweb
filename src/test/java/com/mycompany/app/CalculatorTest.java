@@ -66,7 +66,7 @@ public class CalculatorTest {
 
     //multiplicacion de numeros enteros resultados menores a 100;
     @Test
-    public void multiplyTwoNumbers_Success() throws AddOperationException{
+    public void multiplyTwoNumbers_Success() throws MultiplyOperationException{
         //Arrange (defición del estado de objetos a participar en la prueba)
         int numberOne = 4;
         int numberTwo = 7;
@@ -81,7 +81,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void multiplyTwoBigNumbers_Failed() throws AddOperationException{
+    public void multiplyTwoBigNumbers_Failed() throws MultiplyOperationException{
         //Arrange (defición del estado de objetos a participar en la prueba)
         int numberOne = 14;
         int numberTwo = 17;
@@ -94,19 +94,23 @@ public class CalculatorTest {
         //Asert (validación)
         assertEquals(resultExpected, result);
     }
+    //Solo se pueden dividir un primer numero mayor al segundo numero
     @Test
-    public void divideTwoNumbers_Success() throws AddOperationException{
+    public void divideTwoNumbers_Success() throws DivideOperationException{
         //Arrange (defición del estado de objetos a participar en la prueba)
-        int numberOne = 6;
-        int numberTwo = 2;
+        int numberOne = 15;
+        int numberTwo = 5;
+        int resultExpected = 3 ;
 
         //Actc (donde ejecuto la función que quiero probar)
         Calculator calculator = new Calculator();
-        calculator.divide(numberOne, numberTwo);
-        //Assert
+        int result = calculator.divide(numberOne, numberTwo);
+        
+        //Asert (validación)
+        assertEquals(resultExpected, result);
     }
     @Test
-    public void divideOneSmallNumberToOneBigNumber_Fail() throws AddOperationException{
+    public void divideOneSmallNumberToOneBigNumber_Fail() throws DivideOperationException{
         int numberOne = 3;
         int numberTwo = 7;
         Calculator calculator = new Calculator();

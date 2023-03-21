@@ -11,7 +11,7 @@ public class Calculator {
         int result = numberOne + numberTwo;
         //if numberone + numberto >= 100 :: result = -1 
         if (numberOne <=0 || numberTwo <= 0){
-            throw new AddOperationException("Los valores negativos no son permitidos");
+            throw new AddOperationException("Los valores negativos no son permitidos en la suma");
         }
         if (result >= 100){
             return -1;
@@ -19,11 +19,11 @@ public class Calculator {
         
         return result;
     }
-    public int multiply(int numberOne, int numberTwo) throws AddOperationException{
+    public int multiply(int numberOne, int numberTwo) throws MultiplyOperationException{
         int result = numberOne * numberTwo;
         //if numberone x numberto >= 100 :: result = -1
         if (numberOne <=0 || numberTwo <= 0){
-            throw new AddOperationException("Los valores negativos no son permitidos");
+            throw new MultiplyOperationException("Los valores negativos no son permitidos en la multiplicación");
         }
         if (result >= 100){
             return -1;
@@ -31,12 +31,12 @@ public class Calculator {
         
         return result;
     }
-    public double divide(int numberOne, int numberTwo) throws AddOperationException{
+    public int divide(int numberOne, int numberTwo) throws DivideOperationException{
         int result = numberOne / numberTwo;
         int remainder = numberOne % numberTwo;
         //if numberone x numberto >= 100 :: result = -1
         if (numberOne <=0 || numberTwo <= 0){
-            throw new AddOperationException("Los valores negativos no son permitidos");
+            throw new DivideOperationException("Los valores negativos no son permitidos en la division");
         }
         if (remainder >= 1){
             return -1;
