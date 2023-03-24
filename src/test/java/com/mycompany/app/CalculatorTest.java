@@ -28,17 +28,16 @@ public class CalculatorTest {
         assertEquals(resultExpected, result);
     }
 
-    @Test
+    @Test(expected = AddOperationException.class)
     public void addTwoHugeNumbers_Failed() throws AddOperationException{
         //Arrange
         int numberOne = 60;
         int numberTwo = 70;
-        int resultExpected = -1;
+    
         //Act
         Calculator calculator = new Calculator();
-        int result = calculator.add(numberOne, numberTwo);
+        calculator.add(numberOne, numberTwo);
         //Assert
-        assertEquals(resultExpected, result);
     }
 
     @Test(expected = AddOperationException.class)
@@ -80,19 +79,17 @@ public class CalculatorTest {
         assertEquals(resultExpected, result);
     }
 
-    @Test
+    @Test (expected = MultiplyOperationException.class)
     public void multiplyTwoBigNumbers_Failed() throws MultiplyOperationException{
         //Arrange (defición del estado de objetos a participar en la prueba)
         int numberOne = 14;
         int numberTwo = 17;
-        int resultExpected = -1 ;
 
         //Actc (donde ejecuto la función que quiero probar)
         Calculator calculator = new Calculator();
-        int result = calculator.multiply(numberOne, numberTwo);
+        calculator.multiply(numberOne, numberTwo);
         
         //Asert (validación)
-        assertEquals(resultExpected, result);
     }
     //Solo se pueden dividir un primer numero mayor al segundo numero
     @Test
@@ -109,7 +106,7 @@ public class CalculatorTest {
         //Asert (validación)
         assertEquals(resultExpected, result);
     }
-    @Test
+    @Test(expected = DivideOperationException.class)
     public void divideOneSmallNumberToOneBigNumber_Fail() throws DivideOperationException{
         int numberOne = 3;
         int numberTwo = 7;
